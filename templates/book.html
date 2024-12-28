@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="book-detail">
+        <div class="book-image">
+            <img src="{{ url_for('static', filename=book.url) }}" alt="{{ book.title }}" class="img-fluid rounded">
+        </div>
+        <div class="book-info">
+            <h1 class="text-center mb-4">{{ book.title }}</h1>
+            <div class="text-center mb-4">
+                <p><strong>Author:</strong> {{ book.author }}</p>
+                <p><strong>Genre:</strong> {{ book.genre }}</p>
+                <p>{{ book.description }}</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Review List -->
+    <h2 class="mt-5 mb-4">Review List</h2>
+    {% if reviews %}
+        {% for review in reviews %}
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <p class="card-text">{{ review.content }}</p>
+                <p class="card-text"><strong>Likes:</strong> <span class="like-count">{{ review.like_count }}</span></p>
+                
+                <button class="btn btn-success like-btn" data-review-id="{{ review.id }}"
+                        {% if review.liked_by_user %} disabled {% endif %}>
+                    {% if review.liked_by_user %} Liked {% else %} Like {% endif %}
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No reviews yet.</p>
+    {% endif %}
+
+    <!-- Review Form -->
+    {% if session.get('user_id') %}
+    <h3 class="mt-5 mb-3">Write a Review</h3>
+    <form method="POST" class="shadow-lg p-4 rounded bg-light">
+        <div class="mb-3">
+            <label for="content" class="form-label">Your Review</label>
+            <textarea class="form-control" id="content" name="content" rows="4" required placeholder="Write your review here..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+    {% else %}
+        <p>Please <a href="/login">login</a> to submit your review.</p>
+    {% endif %}
+</div>
+{% endblock %}

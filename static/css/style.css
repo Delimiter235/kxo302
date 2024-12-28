@@ -1,0 +1,181 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #1a73e8, #ff4081); 
+    color: #fff;
+    padding: 20px; 
+    border-radius: 10px;
+}
+
+.navbar {
+    background-color: #343a40;
+    border-radius: 10px; 
+}
+
+.navbar-brand,
+.nav-link {
+    color: #fff;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-title {
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+.search-form input,
+.search-form button {
+    border-radius: 50px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1a73e8, #ff4081);
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    border-radius: 10px; 
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+}
+
+/* Card Section */
+.card-deck {
+    margin-top: 30px;
+}
+
+/* Cool Button Styles */
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff4081, #1a73e8);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.btn:hover {
+    background: linear-gradient(135deg, #1a73e8, #ff4081);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Ripple Effect on Click */
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.btn:active::after {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+/* Button Types */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #00bcd4);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #00bcd4, #007bff);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d, #495057);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #495057, #6c757d);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #20c997, #28a745);
+}
+.book-cover {
+    width: 100%;
+    height: 500px; /* 固定高度，可根据设计调整 */
+    object-fit: cover; /* 裁剪图片以适应容器，不拉伸或变形 */
+    border-radius: 5px; /* 添加圆角（可选） */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 鼠标悬停时增加缩放效果 */
+.book-cover:hover {
+    transform: scale(1.05);
+}
+
+
+/* Container to display the image and content side by side */
+.book-detail {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns the image and text at the top */
+    gap: 30px; /* Creates space between the image and the content */
+    margin: 20px;
+}
+
+/* Style for the book image */
+.book-image img {
+    width: 300px; /* Set a fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without stretching */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Style for the book information */
+.book-info {
+    max-width: 600px; /* Set a maximum width for the text area */
+    text-align: left; /* Align the text to the left */
+}
+
+.book-info h1 {
+    font-size: 2.5rem; /* Adjust title size */
+    font-weight: bold;
+}
+
+.book-info p {
+    font-size: 1.1rem; /* Adjust paragraph font size */
+}

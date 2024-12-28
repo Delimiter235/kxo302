@@ -1,0 +1,17 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<ul>
+    <h1>{{ user.username }}</h1>
+    <li>Age: {{ user.age }}</li>
+    <li>Gender: {{ user.gender }}</li>
+    <li>Favorite Genre: {{ user.favorite_genre }}</li>
+    <li>Reading History: {{ user.read_books }}</li>
+</ul>
+<h3>Your Review</h3>
+<ul>
+    {% for review in reviews %}
+    <li>{{ review.content }} (Like Num: {{ review.like_count }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}

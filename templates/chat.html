@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center mb-4">Join Room</h3>
+            <form id="joinRoom" method="POST" action="#" class="mb-3">
+                <div class="mb-3">
+                    <label for="roomNum" class="form-label">Room Number</label>
+                    <input type="text" id="roomNum" class="form-control" required>
+                </div>
+                <div class="text-center">
+                    <input type="submit" id="submitRoomNum" value="Submit" class="btn btn-primary w-100">
+                </div>
+            </form>
+            <button id="leaveRoom" class="btn btn-danger w-100 mb-4">Leave</button>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <ul id="chatContent" class="list-unstyled border rounded p-3 bg-light text-dark" style="min-height: 150px; max-height: 300px; overflow-y: auto;">
+                <!-- Chat messages will be appended here -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <form id="submitForm" method="POST" action="#" class="d-flex align-items-center gap-2">
+                <textarea placeholder="Type your message..." name="msg" id="chatMsg" class="form-control" required style="resize: none;"></textarea>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

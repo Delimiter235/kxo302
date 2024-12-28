@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="text-center mb-4">User List</h1>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped text-center shadow-lg rounded">
+        <thead class="thead-dark bg-primary text-white">
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Favorite Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr class="table-hover">
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.favorite_genre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

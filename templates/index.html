@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="container text-center mt-4">
+    <form method="get" action="/" class="d-flex mb-4">
+        <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ search_query }}">
+        <button type="submit" class="btn btn-primary ms-2">Search</button>
+    </form>
+</div>
+
+
+<div class="container card-deck">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for book in books %}
+        <div class="col">
+            <div class="card shadow-lg">
+                <a href="/book/{{ book.id }}">
+                    <!-- 设置图片的固定宽高，并使用 object-fit 来适应容器 -->
+                    <img src="{{ url_for('static', filename=book.url) }}" 
+                         class="card-img-top book-cover" 
+                         alt="{{ book.title }}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <h5 class="card-title">{{ book.author }}</h5>
+                    <p class="card-text">{{ book.description[:100] }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+<nav>
+    <ul class="pagination justify-content-center">
+        {% if page > 1 %}
+        <li class="page-item">
+            <a class="page-link" href="/?page={{ page - 1 }}&search={{ search_query }}">Previous</a>
+        </li>
+        {% endif %}
+        {% for p in range(1, total_pages + 1) %}
+        <li class="page-item {% if p == page %}active{% endif %}">
+            <a class="page-link" href="/?page={{ p }}&search={{ search_query }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+        {% if page < total_pages %}
+        <li class="page-item">
+            <a class="page-link" href="/?page={{ page + 1 }}&search={{ search_query }}">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+
+{% endblock %}

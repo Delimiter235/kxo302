@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Register</h1>
+    
+    <!-- Register Form inside a Card -->
+    <div class="card shadow-lg mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+            <form method="POST">
+                <!-- Username Field -->
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required placeholder="Enter your username">
+                </div>
+                
+                <!-- Password Field -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                
+                <!-- Age Field -->
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" required placeholder="Enter your age">
+                </div>
+
+                <!-- Gender Field -->
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Favorite Genre Field -->
+                <div class="mb-3">
+                    <label for="favorite_genre" class="form-label">Favorite Genre</label>
+                    <select class="form-control" id="favorite_genre" name="favorite_genre" required>
+                        <option value="fiction">Fiction</option>
+                        <option value="non_fiction">Non-fiction</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="romance">Romance</option>
+                        <option value="science_fiction">Science Fiction</option>
+                        <option value="historical_fiction">Historical Fiction</option>
+                        <option value="biography">Biography</option>
+                        <option value="self_help">Self-help</option>
+                        <option value="philosophy">Philosophy</option>
+                        <option value="psychology">Psychology</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="horror">Horror</option>
+                        <option value="poetry">Poetry</option>
+                    </select>
+                </div>
+
+
+
+                <div class="mb-3">
+    <label class="form-label" for="read_books">Reading History </label>
+    <div id="read_books" style="max-height: 100px; overflow-y: auto; border: 1px solid #ccc; padding: 5px; width: 450px;">
+
+        <div><input type="checkbox" id="book_1" name="read_books" value="The Great Gatsby"><label for="book_1"> The Great Gatsby</label></div>
+        <div><input type="checkbox" id="book_2" name="read_books" value="To Kill a Mockingbird"><label for="book_2"> To Kill a Mockingbird</label></div>
+        <div><input type="checkbox" id="book_3" name="read_books" value="1984"><label for="book_3"> 1984</label></div>
+        <div><input type="checkbox" id="book_4" name="read_books" value="Pride and Prejudice"><label for="book_4"> Pride and Prejudice</label></div>
+        <div><input type="checkbox" id="book_5" name="read_books" value="Moby-Dick"><label for="book_5"> Moby-Dick</label></div>
+        <div><input type="checkbox" id="book_6" name="read_books" value="The Catcher in the Rye"><label for="book_6"> The Catcher in the Rye</label></div>
+        <div><input type="checkbox" id="book_7" name="read_books" value="Brave New World"><label for="book_7"> Brave New World</label></div>
+        <div><input type="checkbox" id="book_8" name="read_books" value="The Hobbit"><label for="book_8"> The Hobbit</label></div>
+        <div><input type="checkbox" id="book_9" name="read_books" value="Fahrenheit 451"><label for="book_9"> Fahrenheit 451</label></div>
+        <div><input type="checkbox" id="book_10" name="read_books" value="The Lord of the Rings: The Fellowship of the Ring"><label for="book_10"> The Lord of the Rings: The Fellowship of the Ring</label></div>
+        <div><input type="checkbox" id="book_11" name="read_books" value="Harry Potter and the Sorcerer's Stone"><label for="book_11"> Harry Potter and the Sorcerer's Stone</label></div>
+        <div><input type="checkbox" id="book_12" name="read_books" value="The Alchemist"><label for="book_12"> The Alchemist</label></div>
+        <div><input type="checkbox" id="book_13" name="read_books" value="Crime and Punishment"><label for="book_13"> Crime and Punishment</label></div>
+        <div><input type="checkbox" id="book_14" name="read_books" value="The Grapes of Wrath"><label for="book_14"> The Grapes of Wrath</label></div>
+        <div><input type="checkbox" id="book_15" name="read_books" value="Jane Eyre"><label for="book_15"> Jane Eyre</label></div>
+        <div><input type="checkbox" id="book_16" name="read_books" value="Wuthering Heights"><label for="book_16"> Wuthering Heights</label></div>
+        <div><input type="checkbox" id="book_17" name="read_books" value="The Picture of Dorian Gray"><label for="book_17"> The Picture of Dorian Gray</label></div>
+        <div><input type="checkbox" id="book_18" name="read_books" value="Anna Karenina"><label for="book_18"> Anna Karenina</label></div>
+        <div><input type="checkbox" id="book_19" name="read_books" value="The Road"><label for="book_19"> The Road</label></div>
+        <div><input type="checkbox" id="book_20" name="read_books" value="One Hundred Years of Solitude"><label for="book_20"> One Hundred Years of Solitude</label></div>
+        <div><input type="checkbox" id="book_21" name="read_books" value="Frankenstein"><label for="book_21"> Frankenstein</label></div>
+        <div><input type="checkbox" id="book_22" name="read_books" value="Les Misérables"><label for="book_22"> Les Misérables</label></div>
+        <div><input type="checkbox" id="book_23" name="read_books" value="The Divine Comedy"><label for="book_23"> The Divine Comedy</label></div>
+        <div><input type="checkbox" id="book_24" name="read_books" value="The Count of Monte Cristo"><label for="book_24"> The Count of Monte Cristo</label></div>
+        <div><input type="checkbox" id="book_25" name="read_books" value="Don Quixote"><label for="book_25"> Don Quixote</label></div>
+        <div><input type="checkbox" id="book_26" name="read_books" value="Dracula"><label for="book_26"> Dracula</label></div>
+        <div><input type="checkbox" id="book_27" name="read_books" value="The Odyssey"><label for="book_27"> The Odyssey</label></div>
+        <div><input type="checkbox" id="book_28" name="read_books" value="The Kite Runner"><label for="book_28"> The Kite Runner</label></div>
+        <div><input type="checkbox" id="book_29" name="read_books" value="Life of Pi"><label for="book_29"> Life of Pi</label></div>
+        <div><input type="checkbox" id="book_30" name="read_books" value="A Tale of Two Cities"><label for="book_30"> A Tale of Two Cities</label></div>
+        <div><input type="checkbox" id="book_31" name="read_books" value="The Bell Jar"><label for="book_31"> The Bell Jar</label></div>
+        <div><input type="checkbox" id="book_32" name="read_books" value="The Shining"><label for="book_32"> The Shining</label></div>
+        <div><input type="checkbox" id="book_33" name="read_books" value="The Giver"><label for="book_33"> The Giver</label></div>
+        <div><input type="checkbox" id="book_34" name="read_books" value="The Girl with the Dragon Tattoo"><label for="book_34"> The Girl with the Dragon Tattoo</label></div>
+        <div><input type="checkbox" id="book_35" name="read_books" value="The Hunger Games"><label for="book_35"> The Hunger Games</label></div>
+    </div>
+</div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
